@@ -1,0 +1,197 @@
+:root {
+  --almost-white: hsl(0, 0%, 98%);
+  --medium-gray: hsl(0, 0%, 41%);
+  --almost-black: hsl(0, 0%, 8%);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  padding: 1.5rem 2rem;
+  color: var(--medium-gray);
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  color: var(--medium-gray);
+}
+
+a img {
+  vertical-align: bottom;
+}
+
+.arrow {
+  margin-left: 0.5rem;
+}
+.arrow img {
+  vertical-align: middle;
+}
+
+.navbar .mainList {
+  justify-self: flex-start;
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.mainList button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mainList li {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mainList li:hover {
+  color: var(--almost-black);
+}
+
+.mainList li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.dropMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: absolute;
+  top: 4.25rem;
+  left: 0;
+  right: 0;
+  background-color: var(--almost-white);
+  width: fit-content;
+  padding: 1.25rem;
+  list-style: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.dropMenu img {
+  margin-right: 0.75rem;
+}
+
+#dropFeat {
+  left: 6.5rem;
+}
+
+#dropComp {
+  left: 15.75rem;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+  margin-right: 1.5rem;
+}
+
+.buttonContainer button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  color: var(--medium-gray);
+  transition: all 0.3s ease;
+}
+
+.buttonContainer button:hover {
+  color: var(--almost-black);
+}
+
+.buttonContainer .register {
+  border-radius: 0.75rem;
+  border: 1px solid var(--medium-gray);
+}
+
+.buttonContainer .register:hover {
+  color: var(--almost-black);
+  border-color: var(--almost-black);
+}
+
+.navClose,
+.navHamburger {
+  display: none;
+  cursor: pointer;
+  color: var(--medium-gray);
+}
+
+.navClose:hover,
+.navHamburger:hover {
+  color: var(--almost-black);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+  }
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    padding: 1.5rem 2rem;
+    background-color: var(--almost-white);
+    transition: right 0.3s ease;
+  }
+  .menu.false {
+    right: -300px;
+    overflow: hidden;
+    transition: right 0.3s ease;
+  }
+  /* .menu.active::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 55vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+  } */
+  .navClose,
+  .navHamburger {
+    display: block;
+  }
+  .navClose {
+    position: relative;
+    margin-left: auto;
+  }
+  .mainList {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .buttonContainer {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .dropMenu {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-shadow: none;
+    padding: 0 0 0 1.5rem;
+  }
+  #dropFeat,
+  #dropComp {
+    left: 0;
+  }
+}
